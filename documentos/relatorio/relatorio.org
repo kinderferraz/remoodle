@@ -1,0 +1,73 @@
+#+title: Relatório: Remoodle
+#+author: Alkindar Rodrigues, Anna Julia Lima
+#+email: ferraz.alkindar@gmail.com
+#+startup: overview
+#+options: tex:t toc:nil num:nil
+
+:latex_props:
+#+latex_compiler: pdflatex
+#+latex_header: \usepackage {indentfirst}
+#+latex_header: \usepackage [a4, top = 3cm, bottom = 2cm, inner = 3cm, outter = 3cm] {geometry}
+#+latex_header_extra: \setlength {\parindent} {3em} \hypersetup{draft}
+#+subtitle: Uma reimplementação de interfaces do Moodle IFSP
+#+latex_class: article
+#+date: \today
+:end:
+
+* O Moodle
+:hide:
+Neste período de pandemia, quando as universidades tiveram que se
+adaptar ao ensino a distância, o Moodle se tornou uma das ferramentas
+usadas para tal, ganhando ainda mais importância em comparação ao que
+tinha antes de março de 2020.
+Esta plataforma de gestão de aprendizagem, segundo consta em seu
+portal, promete auxiliar o ensino em diversas instituições provendo
+``um sistema único, robusto, seguro e integrado''[fn:1], mas que ao mesmo
+tempo é altamente flexível, tanto em suas funcionalidades quanto em
+sua interface.
+
+Para tanto, as versões do sistema Moodle são colocadas em produção
+a pedido dos próprios gestores das instituições que o utilizam, sendo
+cada instância livre das demais quanto as funções e interfaces
+que decide implementar.
+Para além destas variações de instância a instância, diversas opções
+de layout são disponibilizadas para os usuários, e principalmente
+educadores, que recebem opções /drag and drop/ para construir os
+espaços de disciplinas, atividades, material de estudo e áreas de
+entrega de tarefas.
+
+Desta forma, tendo em vista o papel crescente das plataformas virtuais
+de ensino, escolhemos para este trabalho a reelaboração de algumas
+interfaces do Moodle IFSP.
+As sessões que se seguem apresentarão uma análise acerca de algumas
+interfaces altualmente em uso e alguns comentários de estudantes que
+usam esta plataforma para manter a rotina de estudos em isolamento
+social.
+Posteriormente, serão apresentadas algumas propostas de refatoração
+destas interfaces, tendo em vista a sua usabilidade e guiadas pelos
+comentários coletados dos usuários.
+:end:
+
+** A interface do Moodle IFSP
+A interface do Moodle IFSP,
+
+
+#+caption: Painel de cursos do Moodle IFSP
+#+name: fig:painel
+[[./media/painel.png]]
+
+
+
+** Comentários de usuários sobre a inferface do Moodle IFSP
+
+
+* Propstas de refatoração
+
+* Wireframes
+
+* Conclusão
+
+* Footnotes
+
+[fn:1] Esta informação pode ser conferida na documentação da
+plataforma, [[https://docs.moodle.org/39/en/About_Moodle#Highly_flexible_and_fully_customisable][disponivel aqui]], acessado em 07 de outrubro de 2020.
