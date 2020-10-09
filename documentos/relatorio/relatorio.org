@@ -69,6 +69,34 @@ A interface do Moodle IFSP,
 
 * Conclusão
 
+
+* Apêndice
+:img1:
+#+caption: Painel de cursos do Moodle IFSP
+#+label: fig:painel
+[[./media/painel.png]]
+:end:
+:img2:
+#+caption: Fim da página de painel de cursos do Moodle IFSP
+#+label: fig:painel-fim
+[[./media/painel_fim.png]]
+:end:
+:img3:
+#+caption: /Layout/ da página de disciplina: aulas e arquivos.
+#+label: fig:disc-1
+[[./media/disc_1.png]]
+:end:
+:img4:
+#+caption: /Layout/ da página de disciplina: tópicos em /tab/ que expandem o conteúdo da aula.
+#+label: fig:disc-2
+[[./media/disc_2.png]]
+:end:
+:img5:
+#+caption: /Layout/ da página de disciplinas: tópicos em caixas largas, com detalhes sobre os materiais disponíveis a direita.
+#+label: fig:disc-3
+[[./media/disc_3.png]]
+:end:
+
 * Footnotes
 
 [fn:1] Esta informação pode ser conferida na documentação da
