@@ -33,7 +33,7 @@ a pedido dos próprios gestores das instituições que o utilizam, sendo
 cada instância livre das demais quanto as funções e interfaces
 que decide implementar.
 Para além destas variações de instância a instância, diversas opções
-de layout são disponibilizadas para os usuários, e principalmente
+de /layout/ são disponibilizadas para os usuários, e principalmente
 educadores, que recebem opções /drag and drop/ para construir os
 espaços de disciplinas, atividades, material de estudo e áreas de
 entrega de tarefas.
@@ -51,14 +51,82 @@ comentários coletados dos usuários.
 :end:
 
 ** A interface do Moodle IFSP
-A interface do Moodle IFSP,
+No escopo deste projeto, escolhemos três interfaces do portal Moodle
+IFSP para reimplementar: a página inicial, aberta após o login na
+plataforma, a página de disciplina, relativa a cada um dos cursos em
+que o aluno está matriculado e a página de entrega de tarefas.  Estas
+três interfaces foram escolhidas pois forma um caso de uso bastante
+comum: a entrega de uma atividade por um estudante.
 
+*** O painel de cursos
+A interface principal do Moodle IFSP, como vista nas fuguras
+[[fig:painel]] e [[fig:painel-fim]], está codificada nas cores da instuição (verde e branco)
+e presenta 5 grandes áreas:
+- Uma barra de navegação, no topo, com alguns menus /drop-down/ com
+  /links/ pra os diversos tipos de usuários, uma caixa de pesquisa,
+  alertas de notificações, /chat/, email e outro menu /drop-down/ com
+  /links/ para acesso rápido às informações do usuário.
+- Uma barra lateral à esquerda, acessível por um botão na barra de
+  navegação, composta por botões para a página inicial, calendário
+  acadêmico, arquivos privados e um menu /drop-down/ com as
+  disciplinas em que o aluno está inscrito.
+- Uma área central, intitulada ``Resumo dos cursos'', com /cards/
+  relativos a cada uma das disciplinas do aluno, seguida de outra área
+  (fora do /print/) de cursos acessados recentemente, com os /cards/ semelhantes.
+- Uma barra lateral, cujo conteúdo completo não coube no /print/,
+  intitulada ``Linha do tempo'', com as entregas de tarefas, opções de
+  personalização desta (atrasadas, futuras, período de listagem),
+  seguida de:
+  - opções de acessiblidade;
+  - usuários online;
+  - calendário;
+  - uma segunda lista chamada ``Próximos eventos'', com as avaliações
+    e tarefas futuras, e;
+  - arquivos privados do usuário.
+- Um rodapé verde, com informações sobre os responsáveis sobre a
+  página e a localização do IFSP São Paulo.
 
-#+caption: Painel de cursos do Moodle IFSP
-#+name: fig:painel
-[[./media/painel.png]]
+Nota-se imediatamente alguns problemas com /layout/: a repetição de
+informações nesta tela, com a duplicação, das informações de
+cursos atuais e tarefas futuras. Um botão para personalizar a página
+flutua à direita, acima da barra lateral. A barra lateral à direita é
+desproporcionalmente grande em relação aos demais elementos da página.
 
+*** A página de disciplina
+Dentre as interfaces do portal Moodle, esta é uma das mais flexíveis
+com relação ao /layout/.  As figuras [[fig:disc-1]], [[fig:disc-2]] e
+[[fig:disc-3]] apresentam /prints/ parciais de páginas de disciplinas
+ofertadas no segundo semestre de 2020, enfocando a disposição das
+aulas em cada uma. Consideramos estes /prints/ são ilustrativos acerca
+da enorme flexiblidade em esta interface apresenta:
 
+Vemos na figura [[fig:disc-1]] uma árvore de tópicos. No primeiro nível
+dela, cada elemento diz respeito a uma aula, com seu número e tópico
+em texto grande.  Um nivel abaixo, vários /links/ com símbolo de
+arquivos em pdf, contendo os materiais de aula.  Alguns elementos
+deste nível, referentes a exercícios a serem entregues, possuem
+subtópicos, com /links/ que levam à pagina de entrega de tarefas.  Os
+tópicos no primeiro nível separados por uma linha horizontal, que
+delimita o espaço de cada aula.
+
+Um segundo /layout/ aplicado a esta página esta apresentado na imagem
+[[fig:disc-2]] neste, alguns /links/ foram disponiblizados no topo da
+página, com um acesso a espaços de avisos e retirada de dúvidas, aulas
+síncronas gravadas e uma calculadora online. Logo abaixo destes /links/,
+vários blocos azuis se sobrepões, em um esquema de /tabs/ que expandem
+o conteudo de uma aula abaixo (fora do /print/). Estas podem ter um
+tamanho qualquer, incluir videos, documentos pdf, word ou outros. Como
+o espaço ocupado pelas /tabs/ é consideravelmente maior que a largura
+da página, a linha é quebrada, descaracterizando uma barra de /tabs/.
+
+Por fim, o /layout/apresentado na [[fig:disc-3]] é semelhante ao da figura
+[[fig:disc-1]]: é apresentada uma lista de caixas, com um título em letras
+grandes e azuis, indicando um /links/. No canto direito inferior das
+caixas há alguns rótulos, indicando os materiais associados à aula:
+documentos, tarefas, /links/ externos, e indicadores de progresso,
+para tarefas com mais de uma etapa.
+
+*** A página de entrega de tarefas
 
 ** Comentários de usuários sobre a inferface do Moodle IFSP
 
