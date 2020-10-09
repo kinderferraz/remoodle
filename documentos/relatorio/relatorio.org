@@ -7,11 +7,13 @@
 :latex_props:
 #+latex_compiler: pdflatex
 #+latex_header: \usepackage {indentfirst}
+#+latex_header: \usepackage [brazilian]{babel}
 #+latex_header: \usepackage [a4, top = 3cm, bottom = 2cm, inner = 3cm, outter = 3cm] {geometry}
 #+latex_header_extra: \setlength {\parindent} {3em} \hypersetup{draft}
+#+latex_header_extra: \addto\captionsbrazilian{\renewcommand{\figurename}{Fig.}}
 #+subtitle: Uma reimplementação de interfaces do Moodle IFSP
 #+latex_class: article
-#+date: \today
+#+date: 07 de Outubro de 2019
 :end:
 
 * O Moodle

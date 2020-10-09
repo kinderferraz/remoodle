@@ -28,9 +28,20 @@
     "amsmath"
     "textcomp"
     "amssymb"
-    "capt-of"
     "hyperref")
    (LaTeX-add-labels
-    "sec:orgac1427c"))
+    "sec:org17306a6"
+    "sec:orgca459d5"
+    "sec:orgef4a698"
+    "fig:orga91f48d"
+    "fig:orgaef9dcb"
+    "sec:orgb9ceb57"
+    "fig:org5059855"
+    "fig:org25107fd"
+    "fig:org4087ab9"
+    "sec:orgc00141c"
+    "sec:org08557ed"
+    "sec:org3b41dd5"
+    "sec:orgf7c93fa"))
  :latex)
 
