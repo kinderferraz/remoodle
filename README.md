@@ -24,4 +24,4 @@ reimplementação.  Os códigos escritos estão incluídos na pasta
 Projeto final de disciplina Desenvolvimento Web 1,
 minstrada pela professora Josceli M. Tenorio
 - Alkindar Rodrigues SP3029956
-- Anna Júlia Lima [seu prontuário aj :3]
+- Anna Julia Lima SP3024016
