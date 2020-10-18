@@ -8,9 +8,10 @@
 #+latex_compiler: pdflatex
 #+latex_header: \usepackage {indentfirst}
 #+latex_header: \usepackage [brazilian]{babel}
-#+latex_header: \usepackage [a4, top = 3cm, bottom = 2cm, inner = 3cm, outter = 3cm] {geometry}
+#+latex_header: \usepackage {pgf-pie}
+#+latex_header: \usepackage [a4, top = 3cm, bottom = 2cm, inner = 3cm, outer = 3cm] {geometry}
 #+latex_header_extra: \setlength {\parindent} {3em} \hypersetup{draft}
-#+latex_header_extra: \addto\captionsbrazilian{\renewcommand{\figurename}{Fig.}}
+#+latex_header_extra: \renewenvironment{quote}{\small\list{}{\rightmargin=0cm \leftmargin=4cm}\item[]\relax}{\endlist}
 #+subtitle: Uma reimplementação de interfaces do Moodle IFSP
 #+latex_class: article
 #+date: 07 de Outubro de 2019
@@ -41,7 +42,7 @@ entrega de tarefas.
 Desta forma, tendo em vista o papel crescente das plataformas virtuais
 de ensino, escolhemos para este trabalho a reelaboração de algumas
 interfaces do Moodle IFSP.
-As sessões que se seguem apresentarão uma análise acerca de algumas
+As seções que se seguem apresentarão uma análise acerca de algumas
 interfaces altualmente em uso e alguns comentários de estudantes que
 usam esta plataforma para manter a rotina de estudos em isolamento
 social.
@@ -56,7 +57,8 @@ IFSP para reimplementar: a página inicial, aberta após o login na
 plataforma, a página de disciplina, relativa a cada um dos cursos em
 que o aluno está matriculado e a página de entrega de tarefas.  Estas
 três interfaces foram escolhidas pois forma um caso de uso bastante
-comum: a entrega de uma atividade por um estudante.
+comum: a entrega de uma atividade por um estudante. Prints com estas
+interfaces estão disponíveis no [[Apêndice]] deste documento.
 
 *** O painel de cursos
 A interface principal do Moodle IFSP, como vista nas fuguras
@@ -119,7 +121,7 @@ tamanho qualquer, incluir videos, documentos pdf, word ou outros. Como
 o espaço ocupado pelas /tabs/ é consideravelmente maior que a largura
 da página, a linha é quebrada, descaracterizando uma barra de /tabs/.
 
-Por fim, o /layout/apresentado na [[fig:disc-3]] é semelhante ao da figura
+Por fim, o /layout/ apresentado na [[fig:disc-3]] é semelhante ao da figura
 [[fig:disc-1]]: é apresentada uma lista de caixas, com um título em letras
 grandes e azuis, indicando um /links/. No canto direito inferior das
 caixas há alguns rótulos, indicando os materiais associados à aula:
@@ -127,22 +129,184 @@ documentos, tarefas, /links/ externos, e indicadores de progresso,
 para tarefas com mais de uma etapa.
 
 *** A página de entrega de tarefas
+A área de entrga de tarefa, como vista nas figuras [[fig:entrega-1]] e
+[[fig:entrega-2]] apresenta a mesma barra de navegação presente nas páginas
+anteriores. O corpo da página é composto apenas por uma área, com um
+título, instruções e uma tabela com as informações de envio. Dentre as
+opções de envio, é possível enviar arquivos ou textos, além de
+comentários sobre o envio que podem ser adicionados a qualquer
+momento.
+
+Após o envio, a linha da tabela ``Status de envio'' fica tingida de
+verde, evidenciando que a tarefa foi cumprida. Posteiormente, quando a
+avaliação for finalizada, a linha seguinte, ``Status da avaliação''
+também é colorida em verde, como visto na figura [[fig:entrega-3]] e uma
+segunda tabela aparece, logo abaixo da primeira, com as informações de
+avaliação (nota, data de avaliação, avaliador e comentários.)
+
+Para realizar o envio de uma tarefa, por arquivo, ao clicar no botão
+(fora do print), abre-se a página vista na figura [[fig:arq-1]]. Esta
+contém as mesmas instruções da página anterior e uma tabela com uma
+linha contendo a área de /upload/ de arquivo, e outra com botões de
+ação: salvar e cancelar. Abaixo o rodapé com setas de navegação, para
+o tópico anterior. Na linha de envio de arquivos, há dois botões
+também, um para criar uma pasta virtual e organizar os arquivos
+enviados, outro que abre o /pop-up/ de seleção de arquivo.
+
+Este /pop-up/, apresentado na figura [[fig:arq-2]], quando aberto,
+escurece a página por baixo, desativando todos os cliques nela.  Para
+além disso, ele apresenta um botão de /upload/ de arquivo, e um
+formulário com opções de como salvar o arquivo, com o nome a ser
+salvo, autor e a licensa de uso. À esquerda, estão algumas abas
+disponíveis, com diferentes fontes dos arquivos: /upload/, recentes,
+arquivos privados e /Wikimedia/.
+
 
 ** Comentários de usuários sobre a inferface do Moodle IFSP
+Apresentada as interfaces do Moodle escolhidas para análise neste
+projeto, podemos destacar algumas opiniões acerca desta interface,
+oferecidas por alguns usários. A coleta de dados foi feita por meio de
+um forms no google, disponível [[https://forms.gle/U3KtLT2xPk4pn2q5A][aqui]], de forma a garantir a anomidade
+dos usuários. 32 alunos do Instituto Federal de São Paulo responderam:
+
+Podemos ver, pelo gráfico [[grf:adaptacao]] que metade das pessoas
+aprenderam a usar o Moodle de forma fácil, e que 75% dos usuários nao
+tem grandes dificuldades de uso hoje.  Entretanto, comparando com o
+gráfico [[grf:uso]], das pessoas que tiveram dificuldade moderada para
+aprender a usar a plataforma, algumas consideram a experiência de uso
+atual como díficl, indicando que não aprenderam a usá-la de forma
+satisfatória.
 
 
-* Propstas de refatoração
+Apesar de os alunos conseguirem usar a plataforma, muitos ainda tem
+opiniões desfavoráveis sobre o seu /layout/, como mostram os gráficos
+[[grf:org]] e [[grf:painel]]. Por volta de 60% não consideram o Moodle
+organizado e tem dificuldades para usar o painel de cursos. Uma
+resposta fala especficamente sobre isso. O aluno:
 
-* Wireframes
+#+begin_quote
+[...] tinha muita dificuldade do uso das disciplinas, até
+que comecei a usar a ferramenta de favoritar a disciplina, assim
+concentrei todas as disciplinas que estou cursando atualmente num só
+painel (o painel de favoritos), ficando assim de fácil acesso.
+#+end_quote
+
+Muitos outros alunos citam a enorme flexibilidade na hora de
+confirgurar os /layouts/ na página de disciplina como um ponto
+negativo:
+
+#+begin_quote
+As diferentes formas possíveis de personalizar o espaço virtual da
+matéria, podendo gerar certa confusão e/ou desorganização devido as
+diferenças. Um modelo único seria mais desejável
+#+end_quote
+
+
+#+begin_quote
+Da bagunça, deveria ter um padrão, principalmente no ambiente de cada
+disciplina O visual poderia ser mais limpo, tem muita informação
+desnecessária
+#+end_quote
+
+Comparando com as respostas positivas, acerca do que os alunos gostam
+da plataforma, percebemos que a funcionalidades implementadas são
+desejadas, mas a forma como são feitas deixa a desejar e provocam os
+comentários negativos acima.
+Os alunos dizem:
+
+#+begin_quote
+A forma como as atividades ficam no painel para nos lembrar, é muito
+  bom.\\
+A forma como são entregues as atividades
+#+end_quote
+
+O calendário com as datas de entrega é uma /feature/ bastante
+elogiada, como vemos:
+
+#+begin_quote
+Calendário para a verificação das datas das tarefas
+#+end_quote
+
+#+begin_quote
+Gosto bastante de utilizar o calendário para me orientar sobre quais
+são os trabalhos que tenho pendentes.
+#+end_quote
+
+
+* Propostas de refatoração
+:intro:
+A partir destes comentários, que apontam a necessidade de
+reformular a interface do Moodle IFSP, elaboramos a seguinte lista de
+critérios para a interface proposta:
+
+- Para a página do painel de cursos:
+  - Simplificar do /layouts/ do painel de cursos,
+  - Remover a duplicação dos na área de favoritados,
+  - Permitir a fltragem de cursos conforme semestre, sigla, professor e
+    favoritos.
+    \vspace{1em}
+
+  - Remover o acesso ao menu principal à esquerda.
+    \vspace{1em}
+
+  - Unificar as duas listas de atividades por entregar,
+  - Agrupar os demais campos da barra lateral em apenas um espaço,
+    cujo conteúdo é escolhido junto ao título do espaço,
+  - Manter esta barra à direita com a altura da tela, no máximo,
+  - Agrupar as atividades por entregar segundo as disciplinas,
+  - Manter da ferramenta de filtragem  da lista de atividades.
+    \vspace{1em}
+
+  - Refazer o /footer/ dá página, ocupando menos espaço e apresentando
+    as informações relevantes sobre a instituição e os responsáveis
+    pela plataforma.
+    \vspace{1em}
+
+- Para a página de disciplina:
+  - Unificar os /layouts/ disponíveis em uma estutura simplificada,
+  - Apresentar o espaço com a ementa à direita,
+  - Um espaço com as aulas e rótulos relevantes à esquerda, com
+    rolagem independente da página,
+  - Destacar aulas com atividades pendentes com uma coloração sutil.
+    \vspace{1em}
+
+- Para a página de uma aula:
+  - Unificar os /layouts/ em uma esturutura simplificada,
+  - Apresentar o título, textos e demais recusros, inseridos
+    diretamente no Moodle em um espaço no topo da página,
+  - Abaixo, em um carrossel, os links, arquivos e tarefas
+    disponibilizados para a aula.
+    - Tarefas já concluídas estariam marcadas sutimelmente em verde,
+      atrasadas em vermelho.
+      \vspace{1em}
+
+- Para a área de entrega de tarefa.
+  - Simplificação do /layout/ de tabela da página, com melhor uso do
+    espaço negativo e coloração.
+  - Incorporação do /pop-up/ de /upload/ de arquvivo à página, como um
+    campo da tabela.
+  - Junção de ambas as tabelas (envio e /feedback/ do professor).
+
+:end:
+
+** Wireframes
+Com base nos critérios e objetivos acima expostos, e como guia no
+desenvolvimento do protótipo desta interface, preparamos os seguintes
+/wireframes/ para este projeto.
+
+
 
 * Conclusão
 
 
 * Apêndice
+\setcounter{figure}{0}
+\renewcommand{\figurename}{Fig.}
 :img1:
 #+caption: Painel de cursos do Moodle IFSP
 #+label: fig:painel
 [[./media/painel.png]]
+
 :end:
 :img2:
 #+caption: Fim da página de painel de cursos do Moodle IFSP
@@ -163,6 +327,54 @@ para tarefas com mais de uma etapa.
 #+caption: /Layout/ da página de disciplinas: tópicos em caixas largas, com detalhes sobre os materiais disponíveis a direita.
 #+label: fig:disc-3
 [[./media/disc_3.png]]
+:end:
+:img6:
+#+caption: /Layout/ da página de entrega de tarefas, com a atividade ainda por enviar.
+#+label: fig:entrega-1
+[[./media/entrega_1.png]]
+:end:
+:img7:
+#+caption: /Layout/ da página de entrega de tarefas, com a atividade enviada.
+#+label: fig:entrega-2
+[[./media/entrega_2.png]]
+:end:
+:img8:
+#+caption: /Layout/ da página de entrega de tarefas, com a atividade avaliada.
+#+label: fig:entrega-3
+[[./media/entrega_3.png]]
+:end:
+:img9:
+#+caption: /Layout/ da página de upload de arquivos.
+#+label: fig:arq-1
+[[./media/arquivos_1.png]]
+:end:
+:img10:
+#+caption: /Layout/ do /pop-up/ de seletor de arquivos.
+#+label: fig:arq-2
+[[./media/arquivos_2.png]]
+:end:
+
+\setcounter{figure}{0}
+\renewcommand{\figurename}{Gráfico}
+:grafico:
+#+caption: Porcentagem de alunos que disseram se adaptar com facilidade à plataforma.
+#+label: grf:adaptacao
+[[./media/grafico_adaptacao.png]]
+:end:
+:grafico:
+#+caption: Porcentagem de alunos que disseram ter facilidade de usar a plataforma.
+#+label: grf:uso
+[[./media/grafico_uso.png]]
+:end:
+:grafico:
+#+caption: Porcentagem de alunos que consideram a plataforma organizada.
+#+label: grf:org
+[[./media/grafico_organizacao.png]]
+:end:
+:grafico:
+#+caption: Porcentagem de alunos que consideram ter dificuldade de usar o painel de cursos da plataforma.
+#+label: grf:painel
+[[./media/grafico_painel.png]]
 :end:
 
 * Footnotes
