@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,500&display=swap');
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.top {
+  width: 100%;
+  display: flex;
+  flex: 1;
+  flex-flow: row;
+  align-items: center;
+  height: 60px;
+  background-color: #629c44;
+  padding: 10px 20px;
+}
+
+h1 {
+  font-size: 1.5em;
+  font-weight: 700;
+  margin-right: 10px;
+}
+
+.buscar {
+  padding: 8px 5px;
+  margin: 10px;
+  border: none;
+  border-radius: 10px;
+
+}
+
+button {
+  min-width: 100px;
+  padding: 8px 15px;
+  margin: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: #366a25;
+  text-decoration: none;
+  align-self: center;
+  font-size: 1rem;
+}
+
+.space {
+  flex-grow: 2;
+}
+
+.user-pic {
+  min-width: 0px;
+  width: 30px;
+  border-radius: 20px;
+}
+
+.corpo {
+  min-height: 70%;
+  display: flex;
+  flex-flow: row;
+  margin: 0px 10px 10px 20px;
+  padding: 10px 0px 0px 0px;
+
+}
+
+.top-bar {
+  background-color: #cbe8ba;
+  border-radius: 15px 15px 0px 0px;
+  width: 100%;
+  padding: 0px 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+h2 {
+  padding: 0px;
+  margin: 15px 0px;
+}
+
+.top-bar > button {
+  height: 35px;
+}
+
+#main {
+  width: 70%;
+  padding: 15px;
+  margin-right: 20px;
+}
+
+#painel {
+  padding: 0px;
+  display: flex;
+  flex-direction: row;
+}
+
+
+.sidebar {
+  padding: 15px;
+  width: 30%;
+}
+
+.disc-card {
+  background-color: rgba(198,255,147, 0.6);
+  width: 13rem;
+  height: 14rem;
+  margin: 10px 35px 5px 0px;
+  padding: 10px 10px 0px 15px;
+  border-radius: 20px;
+}
+
+.disc-card > h4 {
+  font-weight: 500;
+  padding: 10px 0px;
+  margin: 10px 0px;
+}
+
+footer {
+  background-color:  #629c44;
+  padding: 20px;
+  height: 13rem;
+}

@@ -377,6 +377,7 @@ desenvolvimento do protótipo desta interface, preparamos os seguintes
 [[./media/grafico_painel.png]]
 :end:
 
+
 * Footnotes
 
 [fn:1] Esta informação pode ser conferida na documentação da
