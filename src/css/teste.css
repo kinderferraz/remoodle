@@ -12,13 +12,13 @@ body {
 
 .top {
   width: 100%;
+  height: 8vh;
   display: flex;
   flex: 1;
   flex-flow: row;
   align-items: center;
-  height: 60px;
   background-color: #629c44;
-  padding: 10px 20px;
+  padding: 2% 3%;
 }
 
 h1 {
@@ -52,18 +52,26 @@ button {
 }
 
 .user-pic {
-  min-width: 0px;
-  width: 30px;
-  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0%);
+  width: 0px;
+  padding: 0px;
+  margin: 0px;
+  min-width: 30px;
+}
+
+img {
+  max-width: 30px;
+  max-height: 30px;
+  object-fit: contain;
 }
 
 .corpo {
-  min-height: 70%;
+  min-height: 72vh;
   display: flex;
   flex-flow: row;
-  margin: 0px 10px 10px 20px;
+  margin: 0px 10px 15px 20px;
   padding: 10px 0px 0px 0px;
-
+  overflow: auto;
 }
 
 .top-bar {
@@ -92,11 +100,12 @@ h2 {
 }
 
 #painel {
-  padding: 0px;
-  display: flex;
-  flex-direction: row;
+  padding-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, [col-start] 1fr) [col-end];
+  column-gap: 3%;
+  row-gap: 3%;
 }
-
 
 .sidebar {
   padding: 15px;
@@ -105,21 +114,19 @@ h2 {
 
 .disc-card {
   background-color: rgba(198,255,147, 0.6);
-  width: 13rem;
   height: 14rem;
-  margin: 10px 35px 5px 0px;
-  padding: 10px 10px 0px 15px;
+  padding: 1% 0% 1% 5%;
   border-radius: 20px;
 }
 
 .disc-card > h4 {
   font-weight: 500;
-  padding: 10px 0px;
-  margin: 10px 0px;
+  padding: 5px 0px;
+  margin: 5px 0px;
 }
 
 footer {
   background-color:  #629c44;
-  padding: 20px;
-  height: 13rem;
+  padding: 1% 0% 0% 2%;
+  height: 19vh;
 }

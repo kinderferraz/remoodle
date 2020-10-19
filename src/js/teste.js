@@ -7,6 +7,22 @@ const disc = {
     "nome": "Estatistica e probabilidade",
     "sigla": "ESPA3",
     "prof": "Maria Eduarda"
+  },{
+    "nome": "Desenvolvimento WEB 1",
+    "sigla": "DW1A3",
+    "prof": "Josceli"
+  },{
+    "nome": "Estatistica e probabilidade",
+    "sigla": "ESPA3",
+    "prof": "Maria Eduarda"
+  },{
+    "nome": "Desenvolvimento WEB 1",
+    "sigla": "DW1A3",
+    "prof": "Josceli"
+  },{
+    "nome": "Estatistica e probabilidade",
+    "sigla": "ESPA3",
+    "prof": "Maria Eduarda"
   }]
 };
 
