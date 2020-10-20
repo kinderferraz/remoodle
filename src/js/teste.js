@@ -66,7 +66,7 @@ const displayDiscCards = (d) => {
   aulas.innerHTML += "<span>Aulas restantes:";
   aulas.innerHTML += "<span>" + (d.aulasSemestre - d.concluidos);
 
-  icon.setAttribute("src", "../media/school-hat.png");
+  icon.setAttribute("src", "../media/school-hat.svg");
   label.appendChild(icon);
   label.appendChild(sigla);
 
@@ -136,12 +136,12 @@ const displayBadgesTarefas = (t) => {
 
   if (t.envio) {
     badge.classList.add("enviado");
-    icon.setAttribute("src", "../media/alarm-check.png");
+    icon.setAttribute("src", "../media/alarm-check.svg");
   } else if (t.prazo.getTime() < Date.now()) {
     badge.classList.add("atrasado");
-    icon.setAttribute("src", "../media/alarm-off.png");
+    icon.setAttribute("src", "../media/alarm-off.svg");
   } else
-    icon.setAttribute("src", "../media/alarm-add.png");
+    icon.setAttribute("src", "../media/alarm-add.svg");
 
 
   icon.setAttribute("class", "icon");
