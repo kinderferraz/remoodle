@@ -5,9 +5,9 @@
 /* Este objeto garante a integridade dos valores de filtro, isto é,
  * em nenhum momento o valor de filtroTarefas pode ser outro objeto. */
 const filtros = {
-  TUDO: "tudo",
-  ATRASADO: "atrasado",
-  NO_PRAZO: "prazo"
+  TUDO: "Tudo",
+  ATRASADO: "Atrasado",
+  NO_PRAZO: "No prazo"
 };
 let filtroTarefas = filtros.TUDO;
 
@@ -21,6 +21,36 @@ const options = {
 
 /* O objeto no DOM onde os bagdes serão inseridos */
 const sidebarTarefas = document.querySelector("#tarefas");
+const popupTarefas = document.querySelector("#tarefa-filtros");
+
+/* Montar o popup com filtros e adicionar eventListeners */
+const appendToPopUp = (texto) => {
+  const div = document.createElement("div");
+  div.innerText = texto;
+
+  div.addEventListener("click", atualizarFiltro);
+  popupTarefas.appendChild(div);
+};
+
+/* De fato incluir o texto no popup */
+for (const [chave, val] of Object.entries(filtros)) {
+  appendToPopUp(val);
+}
+
+/* Atualizar o valor do filtro de tarefas e remontar a lista */
+const atualizarFiltro = (e) => {
+  const novoFiltro = e.target.innerHTML;
+  console.log(novoFiltro);
+
+  if ("Tudo" === novoFiltro)
+    filtroTarefas = filtros.TUDO;
+  else if ("Atrasado" === novoFiltro)
+    filtroTarefas = filtros.ATRASADO;
+  else if ("No prazo" == novoFiltro)
+    filtroTarefas = filtros.NO_PRAZO;
+
+  displayBarraTarefas();
+};
 
 /* Os dados para montar o badge */
 const entregas = [{
@@ -107,6 +137,6 @@ const displayBarraTarefas = () => {
   entregas.filter(tarefaFiltro).map(displayBadgesTarefas);
 };
 
+/* De fato inserir os elementos na lista de entregas, antes de abrir
+ * a página. */
 displayBarraTarefas();
-
-/*Envent listeners */
