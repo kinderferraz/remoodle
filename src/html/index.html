@@ -9,19 +9,47 @@
     <navbar class="top">
       <span></span>
       <h1>Moodle IFSP</h1>
-      <button>
-        Cursos
-      </button>
+
+      <div id="popup" class="popup">
+
+
+        </div>
+
+      <button onClick="open()">CURSOS</button>
+
       <span class="space"></span>
       <input class="buscar" name="buscar" type="text"
              value="" placeholder="Pesquisar" />
-      <button class="icon">
-        <img alt="Notificações" src="../media/bell.svg"/>
+
+             <div id="popup" class="popup">
+
+
+        </div>
+      
+
+          <button onClick="open()">
+    
+      <img alt="Notificações" src="../media/bell.svg"/>
+
       </button>
-      <button class="icon">
+
+      <div id="popup" class="popup">
+
+
+        </div>
+      
+
+          <button onClick="open()">
         <img alt="Meu perfil" src="../media/user.svg"/>
       </button>
-      <button class="icon">
+
+      <div id="popup" class="popup">
+
+
+        </div>
+      
+
+          <button onClick="open()">
         <img alt="Acessibilidade" src="../media/accessibility.svg"/>
       </button>
     </navbar>
@@ -30,9 +58,18 @@
       <div id="main">
         <div class="top-bar">
           <h2>Painel de Cursos</h2>
-          <button class="icon">
+
+          <div id="popup" class="popup">
+
+
+        </div>
+      
+
+          <button onClick="open()">
+
             <img src="../media/bars.svg" alt="Filtros" />
           </button>
+
         </div>
         <div id="painel"></div>
       </div>
@@ -40,9 +77,17 @@
       <div class="sidebar">
         <div class="top-bar">
           <h2>Tarefas</h2>
-          <button class="icon">
+
+          <div id="popup" class="popup">
+
+
+        </div>
+      
+
+          <button onClick="open()">
             <img src="../media/bars.svg" alt="Filtros" />
           </button>
+
         </div>
         <div id="tarefas"></div>
         <div id="calendario"></div>
