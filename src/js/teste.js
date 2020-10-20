@@ -42,11 +42,17 @@ const disc = {
     prof: "Maria Eduarda",
     aulasSemestre: 19,
     concluidos: 18
-  }]
+  }],
+  "2 semestre": []
 };
 
 const painel = document.querySelector("#painel");
 let semestre = "1 semestre";
+
+const trocarSemestre = (s) => {
+  if (disc[s])
+    semestre = s;
+};
 
 const displayDiscCards = (d) => {
   let card = document.createElement("div");
@@ -80,7 +86,12 @@ const displayDiscCards = (d) => {
 
   painel.appendChild(card);
 };
-disc[semestre].map(displayDiscCards);
+
+const displayPainel = () => {
+  painel.innerHTML = null;
+  disc[semestre].map(displayDiscCards);
+};
+displayPainel();
 
 /* As tarefas: */
 //harcode enum
