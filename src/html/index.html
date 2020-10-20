@@ -7,50 +7,47 @@
   </head>
   <body>
     <navbar class="top">
-      <span></span>
       <h1>Moodle IFSP</h1>
 
-      <div id="popup" class="popup">
-
-
+      <button class="popup">
+        Cursos
+        <div class="popuptext">
+          <a href="./dummy.html">Tecnológicos</a>
+          <a href="./dummy.html">Bacharelado</a>
+          <a href="./dummy.html">Licenciaturas</a>
+          <a href="./dummy.html">Extensão</a>
         </div>
-
-      <button onClick="open()">CURSOS</button>
+      </button>
 
       <span class="space"></span>
       <input class="buscar" name="buscar" type="text"
              value="" placeholder="Pesquisar" />
 
-             <div id="popup" class="popup">
-
-
+      <button class="icon popup">
+        <img alt="Notificações" src="../media/bell.svg"/>
+        <div class="popuptext">
+          Sem notificações a mostrar.
         </div>
-      
-
-          <button onClick="open()">
-    
-      <img alt="Notificações" src="../media/bell.svg"/>
-
       </button>
 
-      <div id="popup" class="popup">
-
-
-        </div>
-      
-
-          <button onClick="open()">
+      <button class="icon popup">
         <img alt="Meu perfil" src="../media/user.svg"/>
+        <div class="popuptext">
+          <a href="./dummy.html">Configurções</a>
+          <a href="./dummy.html">Mensagens</a>
+          <a href="./dummy.html">Email</a>
+          <a href="./dummy.html">Boletins</a>
+          <a href="./dummy.html">Documentação</a>
+        </div>
       </button>
 
-      <div id="popup" class="popup">
-
-
-        </div>
-      
-
-          <button onClick="open()">
+      <button class="icon popup">
         <img alt="Acessibilidade" src="../media/accessibility.svg"/>
+        <div class="popuptext">
+          <span id="tema-switch">
+            Tema escuro
+          </span>
+        </div>
       </button>
     </navbar>
 
@@ -59,15 +56,10 @@
         <div class="top-bar">
           <h2>Painel de Cursos</h2>
 
-          <div id="popup" class="popup">
-
-
-        </div>
-      
-
-          <button onClick="open()">
-
+          <button class="icon popup">
             <img src="../media/bars.svg" alt="Filtros" />
+            <div class="popuptext" id="semestre-lista">
+            </div>
           </button>
 
         </div>
@@ -77,20 +69,13 @@
       <div class="sidebar">
         <div class="top-bar">
           <h2>Tarefas</h2>
-
-          <div id="popup" class="popup">
-
-
-        </div>
-      
-
-          <button onClick="open()">
+          <button class="icon popup">
             <img src="../media/bars.svg" alt="Filtros" />
+            <div class="popuptext" id="tarefa-filtros">
+            </div>
           </button>
-
         </div>
         <div id="tarefas"></div>
-        <div id="calendario"></div>
       </div>
     </div>
 
@@ -114,6 +99,7 @@
     </footer>
     <script type="text/javascript" src="../js/painelDisciplinas.js"></script>
     <script type="text/javascript" src="../js/barraTarefas.js"></script>
-    <script type="text/javascript" src="../js/teste.js"></script>
+    <script type="text/javascript" src="../js/popup.js"></script>
+    <script>
   </body>
 </html>
