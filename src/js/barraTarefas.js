@@ -2,8 +2,6 @@
  * A lógica é semelhante à usada para o painel de disciplinas,
  * com alguns filtros um pouco mais elaborados. */
 
-/* Este objeto garante a integridade dos valores de filtro, isto é,
- * em nenhum momento o valor de filtroTarefas pode ser outro objeto. */
 const filtros = {
   TUDO: "Tudo",
   ATRASADO: "Atrasado",
@@ -22,35 +20,6 @@ const options = {
 /* O objeto no DOM onde os bagdes serão inseridos */
 const sidebarTarefas = document.querySelector("#tarefas");
 const popupTarefas = document.querySelector("#tarefa-filtros");
-
-/* Montar o popup com filtros e adicionar eventListeners */
-const appendToPopUp = (texto) => {
-  const div = document.createElement("div");
-  div.innerText = texto;
-
-  div.addEventListener("click", atualizarFiltro);
-  popupTarefas.appendChild(div);
-};
-
-/* De fato incluir o texto no popup */
-for (const [chave, val] of Object.entries(filtros)) {
-  appendToPopUp(val);
-}
-
-/* Atualizar o valor do filtro de tarefas e remontar a lista */
-const atualizarFiltro = (e) => {
-  const novoFiltro = e.target.innerHTML;
-  console.log(novoFiltro);
-
-  if ("Tudo" === novoFiltro)
-    filtroTarefas = filtros.TUDO;
-  else if ("Atrasado" === novoFiltro)
-    filtroTarefas = filtros.ATRASADO;
-  else if ("No prazo" == novoFiltro)
-    filtroTarefas = filtros.NO_PRAZO;
-
-  displayBarraTarefas();
-};
 
 /* Os dados para montar o badge */
 const entregas = [{
@@ -74,6 +43,29 @@ const entregas = [{
   prazo: new Date(2020, 10, 14, 23, 59),
   envio: false
 }];
+
+/* Atualizar o valor do filtro de tarefas e remontar a lista */
+const atualizarFiltro = (e) => {
+  const novoFiltro = e.target.innerHTML;
+
+  if ("Tudo" === novoFiltro)
+    filtroTarefas = filtros.TUDO;
+  else if ("Atrasado" === novoFiltro)
+    filtroTarefas = filtros.ATRASADO;
+  else if ("No prazo" == novoFiltro)
+    filtroTarefas = filtros.NO_PRAZO;
+
+  displayBarraTarefas();
+};
+
+/* Montar o popup com filtros e adicionar eventListeners */
+const appendToPopUp = (texto) => {
+  const div = document.createElement("div");
+  div.innerText = texto;
+
+  div.addEventListener("click", atualizarFiltro);
+  popupTarefas.appendChild(div);
+};
 
 /* Esta função é passada como filtro sobre o vetor de tarefas:
  * Seleciona as tarefas de acordo com o critério escolhido pelo usuário:
@@ -136,6 +128,11 @@ const displayBarraTarefas = () => {
   sidebarTarefas.innerHTML = null;
   entregas.filter(tarefaFiltro).map(displayBadgesTarefas);
 };
+
+/* De fato incluir o texto no popup */
+for (const [_, val] of Object.entries(filtros))
+  appendToPopUp(val);
+
 
 /* De fato inserir os elementos na lista de entregas, antes de abrir
  * a página. */

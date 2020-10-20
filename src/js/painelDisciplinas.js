@@ -56,9 +56,32 @@ const disc = {
     aulasSemestre: 19,
     concluidos: 18
   }],
-  "2 semestre": []
+  "2 semestre": [{
+    codigo: 1,
+    nome: "Desenvolvimento WEB 1",
+    sigla: "DW1A3",
+    prof: "Josceli",
+    aulasSemestre: 19,
+    concluidos: 18
+  },{
+    codigo: 2,
+    nome: "Estatistica e probabilidade",
+    sigla: "ESPA3",
+    prof: "Maria Eduarda",
+    aulasSemestre: 19,
+    concluidos: 18
+  },{
+    codigo: 3,
+    nome: "Desenvolvimento WEB 1",
+    sigla: "DW1A3",
+    prof: "Josceli",
+    aulasSemestre: 19,
+    concluidos: 18
+  }]
 };
+
 const painel = document.querySelector("#painel");
+const painelPopup = document.querySelector("#semestre-lista");
 let semestre = "1 semestre";
 
 /* Funções */
@@ -111,3 +134,19 @@ const displayPainel = () => {
 /* Chamada inicial da funcão anterior, para que a página se
  * abra completa */
 displayPainel();
+
+/* Incluir labels no popup de filtragem de semestre */
+const popupAppendText = (texto) => {
+  const div = document.createElement("div");
+  div.innerText = texto;
+
+  div.addEventListener("click", (e) => {
+    semestre = e.target.innerHTML;
+    displayPainel();
+  });
+  painelPopup.appendChild(div);
+};
+
+
+for (const [sem, _] of Object.entries(disc))
+  popupAppendText(sem);
