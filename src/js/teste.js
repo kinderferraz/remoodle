@@ -1,35 +1,47 @@
 /* O painel de cursos */
 const disc = {
   "1 semestre": [{
-    "codigo": 1,
-    "nome": "Desenvolvimento WEB 1",
-    "sigla": "DW1A3",
-    "prof": "Josceli"
+    codigo: 1,
+    nome: "Desenvolvimento WEB 1",
+    sigla: "DW1A3",
+    prof: "Josceli",
+    aulasSemestre: 19,
+    concluidos: 18
   },{
-    "codigo": 2,
-    "nome": "Estatistica e probabilidade",
-    "sigla": "ESPA3",
-    "prof": "Maria Eduarda"
+    codigo: 2,
+    nome: "Estatistica e probabilidade",
+    sigla: "ESPA3",
+    prof: "Maria Eduarda",
+    aulasSemestre: 19,
+    concluidos: 18
   },{
-    "codigo": 3,
-    "nome": "Desenvolvimento WEB 1",
-    "sigla": "DW1A3",
-    "prof": "Josceli"
+    codigo: 3,
+    nome: "Desenvolvimento WEB 1",
+    sigla: "DW1A3",
+    prof: "Josceli",
+    aulasSemestre: 19,
+    concluidos: 18
   },{
-    "codigo": 4,
-    "nome": "Estatistica e probabilidade",
-    "sigla": "ESPA3",
-    "prof": "Maria Eduarda"
+    codigo: 4,
+    nome: "Estatistica e probabilidade",
+    sigla: "ESPA3",
+    prof: "Maria Eduarda",
+    aulasSemestre: 19,
+    concluidos: 18
   },{
-    "codigo": 5,
-    "nome": "Desenvolvimento WEB 1",
-    "sigla": "DW1A3",
-    "prof": "Josceli"
+    codigo: 5,
+    nome: "Desenvolvimento WEB 1",
+    sigla: "DW1A3",
+    prof: "Josceli",
+    aulasSemestre: 19,
+    concluidos: 18
   },{
-    "codigo": 6,
-    "nome": "Estatistica e probabilidade",
-    "sigla": "ESPA3",
-    "prof": "Maria Eduarda"
+    codigo: 6,
+    nome: "Estatistica e probabilidade",
+    sigla: "ESPA3",
+    prof: "Maria Eduarda",
+    aulasSemestre: 19,
+    concluidos: 18
   }]
 };
 
@@ -39,26 +51,32 @@ let semestre = "1 semestre";
 const displayDiscCards = (d) => {
   let card = document.createElement("div");
   let label = document.createElement("div");
+  let icon = document.createElement("img");
   let titulo = document.createElement("h4");
   let sigla = document.createElement("h3");
   let prof = document.createElement("h4");
-  let icon = document.createElement("img");
+  let aulas = document.createElement("p");
 
   titulo.innerText = d.nome;
   sigla.innerText = d.sigla;
   prof.innerText = d.prof;
 
-  icon.setAttribute("src", "../media/school-hat.png");
+  aulas.innerHTML = "<span>Aulas totais:";
+  aulas.innerHTML += "<span>" + d.aulasSemestre;
+  aulas.innerHTML += "<span>Aulas restantes:";
+  aulas.innerHTML += "<span>" + (d.aulasSemestre - d.concluidos);
 
+  icon.setAttribute("src", "../media/school-hat.png");
   label.appendChild(icon);
   label.appendChild(sigla);
 
   card.appendChild(label);
   card.appendChild(titulo);
   card.appendChild(prof);
+  card.appendChild(aulas);
 
-  icon.classList.add("icon");
   card.classList.add("disc-card");
+  icon.classList.add("icon");
 
   painel.appendChild(card);
 };
