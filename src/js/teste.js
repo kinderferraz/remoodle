@@ -155,4 +155,13 @@ const displayBadgesTarefas = (t) => {
   sidebarTarefas.appendChild(badge);
 };
 
-entregas.map(displayBadgesTarefas);
+const tarefaFiltro = (t) => {
+  if (filtroTarefas == filtros.ATRASADO)
+    return t.prazo.getTime() < Date.now() && !t.envio;
+  else if (filtroTarefas == filtros.NO_PRAZO)
+    return t.prazo.getTime() >= Date.now();
+  else
+    return true;
+};
+
+entregas.filter(tarefaFiltro).map(displayBadgesTarefas);
