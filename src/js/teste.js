@@ -165,3 +165,22 @@ const tarefaFiltro = (t) => {
 };
 
 entregas.filter(tarefaFiltro).map(displayBadgesTarefas);
+
+/* Tema noite */
+let tema = "dia";
+
+let stylesheetNoturno = document.createElement("link");
+stylesheetNoturno.rel = "stylesheet";
+stylesheetNoturno.type = "text/css";
+stylesheetNoturno.href = "../css/noite.css";
+
+const switchTema = () => {
+  const header = document.querySelector("head");
+  if (tema == "dia"){
+    header.appendChild(stylesheetNoturno);
+    tema = "noite";
+  } else {
+    header.removeChild(stylesheetNoturno);
+    tema = "dia";
+  }
+};

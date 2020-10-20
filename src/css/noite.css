@@ -1,0 +1,32 @@
+body{
+  background-color: #101b0c;
+  color: #FFF;
+}
+
+.top, .top-bar{
+  background-color: rgba(41, 103, 8, 0.82);;
+}
+
+button {
+  background-color: rgba(140, 16, 16, 0.92);;
+}
+
+.disc-card {
+  background-color: rgba(94, 196, 2, 0.36) ;
+}
+
+footer {
+  background-color:  #214d0a;
+}
+
+.badge {
+  background-color: rgba(106,221,255, 0.47);
+}
+
+.enviado {
+  background-color: rgba(150, 201, 117, 0.69);;
+}
+
+.atrasado {
+  background-color: rgba(255,190,187, 0.5);
+}
