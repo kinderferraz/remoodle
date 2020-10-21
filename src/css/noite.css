@@ -50,3 +50,8 @@ svg {
 footer h2 {
   color: var(--eggwhite);
 }
+
+/* tema noturno para a pag dummy */
+.dummy {
+  background: url("../media/solarized-back-blue.svg") no-repeat;
+}
