@@ -1,0 +1,82 @@
+/* Estilos usados pelos popups. Deve ser incluído em todas as
+ * páginas do documento, pois a barra de acessos faz uso
+ * deles. */
+
+/* Elemento pai */
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Caixa de texto */
+.popup .popuptext {
+  visibility: hidden;
+  max-width: 15vw;
+  min-width: 10vw;
+  background-color: #366a25;
+  color: #333;
+  text-align: left;
+  border-radius: 6px;
+  padding: 1vh 1vw;
+  position: absolute;
+  z-index: 1;
+  margin-left: -3vw;
+  display: flex;
+  flex-direction: column;
+
+  top: 130%;
+  left: 40%;
+}
+
+/* Seta */
+.popup .popuptext::before {
+  content: "";
+  position: absolute;
+  border-style: solid;
+  top: -1rem;
+  left: 1rem;
+  border-width: 0.5rem;
+  border-color: transparent transparent #01661c transparent;
+}
+
+/* Quando for exibir o pop-up. Ativar com js */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 0.4s;
+  animation: fadeIn 0.4s;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+
+/* Posicionar o pop-up referente a um icone */
+.icon > .popuptext {
+  top: 130%;
+  left: -190%;
+}
+
+.icon > .popuptext::before {
+  left: 6.5rem;
+  top: -1rem;
+}
+
+/* Estilizar o texto interno do pop-up:
+ * Evidenciar clicáveis */
+.popuptext > span,
+.popuptext > a {
+  display: block;
+  color: #222;
+  text-decoration: none;
+  padding: 2% 2% 2% 8%;
+  margin: 0px -1vw;
+}
+
+.popuptext a:hover,
+.popuptext div:hover,
+.popuptext span:hover {
+  background-color:  #acf582;
+}

@@ -1,70 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,500&display=swap');
-
-*, *:before, *:after {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0px;
-  padding: 0px;
-  font-family: 'Roboto', sans-serif;
-}
-
-.top {
-  width: 100%;
-  height: 8vh;
-  display: flex;
-  flex: 1;
-  flex-flow: row;
-  align-items: center;
-  background-color: #629c44;
-  padding: 2% 3%;
-}
-
-h1 {
-  font-size: 1.5em;
-  font-weight: 700;
-  margin-right: 10px;
-}
-
-.buscar {
-  padding: 8px 5px;
-  margin: 10px;
-  border: none;
-  border-radius: 10px;
-
-}
-
-button {
-  min-width: 100px;
-  padding: 8px 15px;
-  margin: 10px;
-  border: none;
-  border-radius: 10px;
-  background-color: #366a25;
-  text-decoration: none;
-  align-self: center;
-  font-size: 1rem;
-}
-
-.space {
-  flex-grow: 2;
-}
-
-.icon {
-  background-color: rgba(0, 0, 0, 0%);
-  width: 0px;
-  padding: 0px;
-  margin: 0px 1% 0px 2%;
-  min-width: 30px;
-}
-
-img {
-  max-width: 30px;
-  max-height: 30px;
-  object-fit: contain;
-}
-
+/* Estilos referentes à página principal (painel de cursos) */
 .corpo {
   min-height: 72vh;
   display: flex;
@@ -74,6 +8,7 @@ img {
   overflow: auto;
 }
 
+/* Barra no topo de cada área do painel */
 .top-bar {
   background-color: #cbe8ba;
   border-radius: 15px 15px 0px 0px;
@@ -93,6 +28,9 @@ h2 {
   height: 35px;
 }
 
+
+/* Area principal.
+ * #painel é onde serão exibidas cars com as disciplinas */
 #main {
   width: 70%;
   padding: 15px;
@@ -105,11 +43,6 @@ h2 {
   grid-template-columns: repeat(3, [col-start] 1fr) [col-end];
   column-gap: 3%;
   row-gap: 3%;
-}
-
-.sidebar {
-  padding: 15px;
-  width: 30%;
 }
 
 .disc-card {
@@ -147,32 +80,12 @@ h2 {
   flex: 3 0 2
 }
 
-footer {
-  background-color:  #629c44;
-  padding: 1% 0% 0% 2%;
-  height: 19vh;
-  display: flex;
-  justify-content: space-between;
-}
-
-footer h2 {
-  font-size: 1.6rem;
-  margin: 1% 0px;
-}
-
-footer h3 {
-  font-size: 1.2rem;
-  font-weight: 500;
-  margin: 1% 0px;
-}
-
-footer > div:nth-child(2) {
-  margin-right: 4%;
-  text-align: right;
-}
-
-footer p {
-  margin: 5% 0%;
+/* A barra lateral: aqui (no elemento #tarefas, que dispensa
+ * estilização) serão montados badges com as informações de cada
+ * tarefa */
+.sidebar {
+  padding: 15px;
+  width: 30%;
 }
 
 .badge {
@@ -209,4 +122,3 @@ footer p {
 .atrasado {
   background-color: rgba(255,190,187, 0.5);
 }
-
