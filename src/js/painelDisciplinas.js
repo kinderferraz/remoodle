@@ -121,6 +121,15 @@ const displayDiscCards = (d) => {
 
   card.classList.add("disc-card");
   icon.classList.add("icon");
+  card.addEventListener("click", (e) => {
+    const target = e.currentTarget;
+    let sigla = target.querySelector("h3");
+    sigla = sigla.innerText;
+    if (sigla == "DW1A3")
+      window.open(sigla + ".html", "_self");
+    else
+      window.open("dummy.html", "_self");
+  });
 
   painel.appendChild(card);
 };
