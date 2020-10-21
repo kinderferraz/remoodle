@@ -1,32 +1,52 @@
-body{
-  background-color: #101b0c;
-  color: #FFF;
+:root{
+  --eggwhite: #fcdab7 ;
+  --light-blue: #1e5f74;
+  --medium-blue: #133b5c;
+  --dark-blue: #1d2d50;
+
+  --medium-gray: #CCC;
+  --medium-gray: #AAA;
+  --light-blue: rgba(106,221,255, 0.47);
+
+  --translucid-green: rgba(94, 196, 2, 0.36);
 }
 
-.top, .top-bar{
-  background-color: rgba(41, 103, 8, 0.82);;
+body{
+  background-color: var(--medium-blue);
+  color: var(--eggwhite);
+}
+
+footer,
+.top{
+  background-color: var(--dark-blue);
 }
 
 button {
-  background-color: rgba(140, 16, 16, 0.92);;
+  background-color: var(--pale-red);
+  color: var(--eggwhite);
 }
 
+svg {
+  fill: var(--eggwhite);
+}
+
+.top-bar,
 .disc-card {
-  background-color: rgba(94, 196, 2, 0.36) ;
-}
-
-footer {
-  background-color:  #214d0a;
+  background-color:  var(--translucid-green);
 }
 
 .badge {
-  background-color: rgba(106,221,255, 0.47);
+  background-color: var(--light-blue);
 }
 
 .enviado {
-  background-color: rgba(150, 201, 117, 0.69);;
+  background-color: var(--pale-green);
 }
 
 .atrasado {
-  background-color: rgba(255,190,187, 0.5);
+  background-color: var(--pale-red);
+}
+
+footer h2 {
+  color: var(--eggwhite);
 }
