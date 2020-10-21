@@ -15,8 +15,8 @@
   visibility: hidden;
   max-width: 15vw;
   min-width: 10vw;
-  background-color: #366a25;
-  color: #333;
+  background-color: var(--light-green);
+  color: var(--medium-gray);
   text-align: left;
   border-radius: 6px;
   padding: 1vh 1vw;
@@ -38,7 +38,7 @@
   top: -1rem;
   left: 1rem;
   border-width: 0.5rem;
-  border-color: transparent transparent #01661c transparent;
+  border-color: transparent transparent var(--light-green) transparent;
 }
 
 /* Quando for exibir o pop-up. Ativar com js */
@@ -67,9 +67,10 @@
 /* Estilizar o texto interno do pop-up:
  * Evidenciar clicáveis */
 .popuptext > span,
+.popuptext >div,
 .popuptext > a {
   display: block;
-  color: #222;
+  color: var(--medium-gray);
   text-decoration: none;
   padding: 2% 2% 2% 8%;
   margin: 0px -1vw;
@@ -78,5 +79,5 @@
 .popuptext a:hover,
 .popuptext div:hover,
 .popuptext span:hover {
-  background-color:  #acf582;
+  background-color:  var(--pale-red);
 }

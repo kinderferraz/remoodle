@@ -7,6 +7,21 @@
   box-sizing: border-box;
 }
 
+:root{
+  --pale-green: rgba( 223, 237, 214, 0.5);
+  --green-highlight: #a6cb12;
+  --light-green: #c6e377;
+  --medium-green: #729d39;
+  --dark-green: #36622b;
+
+  --pale-red: rgba(255,190,187, 0.5);
+  --red-highlight: #f00543;
+
+  --medium-gray: #444;
+  --medium-gray: #222;
+  --light-blue: rgba(106,221,255, 0.47);
+}
+
 body {
   margin: 0px;
   padding: 0px;
@@ -21,7 +36,8 @@ body {
   flex: 1;
   flex-flow: row;
   align-items: center;
-  background-color: #629c44;
+  background-color: var(--dark-green);
+
   padding: 2% 3%;
 }
 
@@ -45,7 +61,7 @@ button {
   margin: 10px;
   border: none;
   border-radius: 10px;
-  background-color: #366a25;
+  background-color: var(--medium-green);
   text-decoration: none;
   align-self: center;
   font-size: 1rem;
@@ -71,7 +87,7 @@ img {
 
 /* Estilos usados pelo rodapé da página */
 footer {
-  background-color:  #629c44;
+  background-color: var(--dark-green);
   padding: 1% 0% 0% 2%;
   height: 19vh;
   display: flex;
@@ -81,6 +97,7 @@ footer {
 footer h2 {
   font-size: 1.6rem;
   margin: 1% 0px;
+  color: var(--dark-gray);
 }
 
 footer h3 {
@@ -96,4 +113,8 @@ footer > div:nth-child(2) {
 
 footer p {
   margin: 5% 0%;
+}
+
+footer a {
+  color: var(--gray);
 }

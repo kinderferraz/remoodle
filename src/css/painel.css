@@ -10,7 +10,7 @@
 
 /* Barra no topo de cada área do painel */
 .top-bar {
-  background-color: #cbe8ba;
+  background-color: var(--medium-green);
   border-radius: 15px 15px 0px 0px;
   width: 100%;
   padding: 0px 20px;
@@ -19,7 +19,7 @@
   justify-content: space-between;
 }
 
-h2 {
+.top-bar > h2 {
   padding: 0px;
   margin: 15px 0px;
 }
@@ -46,7 +46,7 @@ h2 {
 }
 
 .disc-card {
-  background-color: rgba(198,255,147, 0.6);
+  background-color: var(--pale-green);
   height: 14rem;
   padding: 1% 5%;
   border-radius: 20px;
@@ -73,6 +73,7 @@ h2 {
 .disc-card > p {
   display: flex;
   flex-flow: row wrap;
+  color: var(--medium-gray);
 }
 
 .disc-card span {
@@ -89,7 +90,7 @@ h2 {
 }
 
 .badge {
-  background-color: rgba(106,221,255, 0.47);
+  background-color: var(--light-blue);
   height: 25%;
   padding: 3% 0%;
   margin: 1% 0%;
@@ -113,12 +114,13 @@ h2 {
 .badge p {
   margin: 0px;
   padding: 0px;
+  color: var(---medium-gray);
 }
 
 .enviado {
-  background-color: #dfedd6;
+  background-color: var(--pale-green);
 }
 
 .atrasado {
-  background-color: rgba(255,190,187, 0.5);
+  background-color: var(--pale-red);
 }
