@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap');
+
+.corpo {
+  padding: 5vh 3vw;
+  min-height: 63vh;
+  background: url("../media/solarized-back.svg") no-repeat;
+}
+
+h2 {
+  font-size: 4rem;
+  margin: 3% 0% 1% 0%;
+  padding: 0% 10% 0% 0%;
+  font-family: 'Fira Code';
+}
+
+h2:nth-child(3) {
+  padding-bottom: 3%
+}
+
+#error404 {
+  padding: 0% 0% 0% 15%;
+}
+
+.par {
+  color: #839496;
+}
+
+.arrow {
+  color: #b58900;
+}
+
+.kw {
+  color: #859900;
+}
+
+.attr {
+  color: #6c71c4;
+}
+
+.num {
+  color: #2aa198;
+}
+
+h3 {
+  font-size: 1.3rem;
+}
+
+a {
+  text-decoration: none;
+  color: #859900;
+}

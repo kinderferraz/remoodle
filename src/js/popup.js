@@ -29,7 +29,6 @@ temaSwitch.addEventListener("click", switchTema);
 const popups = document.querySelectorAll(".popup");
 
 const togglePopup = (e) => {
-  e.preventDefault();
   const popup = e.currentTarget.querySelector(".popuptext");
   popup.classList.toggle("show");
   setTimeout((el) => {

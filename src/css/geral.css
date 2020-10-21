@@ -31,7 +31,8 @@ body {
 /* Estilos usados na barra de acessos, com botões e icones */
 .top {
   width: 100%;
-  height: 8vh;
+  height: 7vh;
+  min-height: 5vh;
   display: flex;
   flex: 1;
   flex-flow: row;
@@ -89,7 +90,8 @@ img {
 footer {
   background-color: var(--dark-green);
   padding: 1% 0% 0% 2%;
-  height: 19vh;
+  min-height: 15vh;
+  height: 20vh;
   display: flex;
   justify-content: space-between;
 }
