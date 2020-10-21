@@ -23,7 +23,7 @@ const discInfo = {
       Nome: "Apresentação",
       data: new Date(2020, 07, 7),
       documentos: {
-        "Apresentação": "../media/apresentação.pdf",
+        "Apresentação": "../media/apresentação.docx",
         "Introdução": "../media/aula1.pdf"
       }
     },
@@ -40,7 +40,7 @@ const discInfo = {
       data: new Date(2020, 07, 21),
       documentos: {
         "HTML": "../media/html.pdf",
-        "Exercicio 1": "../media/exercicio1.pdf"
+        "Exercicio 1": "../media/exercicio1.xls"
       },
       exercicios: {
         "Exercicio 1": "../html/entrega.html",
@@ -50,7 +50,7 @@ const discInfo = {
       data: new Date(2020, 07, 28),
       Nome: "Links e Listas",
       documentos: {
-        "HTML -- Links e Listas": "../media/html2.pdf"
+        "HTML -- Links e Listas": "../media/html2.txt"
       },
       exercicios: {
         "Exercicio 1": "../html/entrega.html",

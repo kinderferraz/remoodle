@@ -13,49 +13,6 @@
 
 /* Consts e variaveis: */
 const disc = {
-  "1 semestre": [{
-    codigo: 1,
-    nome: "Desenvolvimento WEB 1",
-    sigla: "DW1A3",
-    prof: "Josceli",
-    aulasSemestre: 19,
-    concluidos: 18
-  },{
-    codigo: 2,
-    nome: "Estatistica e probabilidade",
-    sigla: "ESPA3",
-    prof: "Maria Eduarda",
-    aulasSemestre: 19,
-    concluidos: 18
-  },{
-    codigo: 3,
-    nome: "Desenvolvimento WEB 1",
-    sigla: "DW1A3",
-    prof: "Josceli",
-    aulasSemestre: 19,
-    concluidos: 18
-  },{
-    codigo: 4,
-    nome: "Estatistica e probabilidade",
-    sigla: "ESPA3",
-    prof: "Maria Eduarda",
-    aulasSemestre: 19,
-    concluidos: 18
-  },{
-    codigo: 5,
-    nome: "Desenvolvimento WEB 1",
-    sigla: "DW1A3",
-    prof: "Josceli",
-    aulasSemestre: 19,
-    concluidos: 18
-  },{
-    codigo: 6,
-    nome: "Estatistica e probabilidade",
-    sigla: "ESPA3",
-    prof: "Maria Eduarda",
-    aulasSemestre: 19,
-    concluidos: 18
-  }],
   "2 semestre": [{
     codigo: 1,
     nome: "Desenvolvimento WEB 1",
@@ -67,22 +24,65 @@ const disc = {
     codigo: 2,
     nome: "Estatistica e probabilidade",
     sigla: "ESPA3",
-    prof: "Maria Eduarda",
+    prof: "Claudia",
     aulasSemestre: 19,
     concluidos: 18
   },{
     codigo: 3,
-    nome: "Desenvolvimento WEB 1",
-    sigla: "DW1A3",
-    prof: "Josceli",
+    nome: "Engenharia de Software 3",
+    sigla: "ES3A3",
+    prof: "Cléber",
     aulasSemestre: 19,
     concluidos: 18
+  },{
+    codigo: 4,
+    nome: "Linguagem de Programação 1",
+    sigla: "LP1A3",
+    prof: "Antonio",
+    aulasSemestre: 19,
+    concluidos: 18
+  },{
+    codigo: 5,
+    nome: "Banco de Dados 2",
+    sigla: "DB2A3",
+    prof: "Maria",
+    aulasSemestre: 19,
+    concluidos: 18
+  },{
+    codigo: 6,
+    nome: "Redes",
+    sigla: "REDA3",
+    prof: "Ana",
+    aulasSemestre: 19,
+    concluidos: 18
+  }],
+  "1 semestre": [{
+    codigo: 1,
+    nome: "Estruturas de Dados",
+    sigla: "EDDA2",
+    prof: "Tomé",
+    aulasSemestre: 19,
+    concluidos: 19
+  },{
+    codigo: 2,
+    nome: "Engenharia de Software 2",
+    sigla: "Majê",
+    prof: "Maria Eduarda",
+    aulasSemestre: 19,
+    concluidos: 19
+  },{
+    codigo: 3,
+    nome: "Banco de dados 1",
+    sigla: "DB1A2",
+    prof: "Fernando",
+    aulasSemestre: 19,
+    concluidos: 19
   }]
 };
 
 const painel = document.querySelector("#painel");
 const painelPopup = document.querySelector("#semestre-lista");
-let semestre = "1 semestre";
+let semestre = "2 semestre";
 
 /* Funções */
 /* Troca o semestre e remonta o painel */
