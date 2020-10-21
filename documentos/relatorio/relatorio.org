@@ -10,7 +10,7 @@
 #+latex_header: \usepackage [brazilian]{babel}
 #+latex_header: \usepackage {pgf-pie}
 #+latex_header: \usepackage [a4, top = 3cm, bottom = 2cm, inner = 3cm, outer = 3cm] {geometry}
-#+latex_header_extra: \setlength {\parindent} {3em} \hypersetup{draft}
+#+latex_header_extra: \setlength {\parindent} {3em} \hypersetup{final}
 #+latex_header_extra: \renewenvironment{quote}{\small\list{}{\rightmargin=0cm \leftmargin=4cm}\item[]\relax}{\endlist}
 #+subtitle: Uma reimplementação de interfaces do Moodle IFSP
 #+latex_class: article
@@ -270,16 +270,6 @@ critérios para a interface proposta:
   - Destacar aulas com atividades pendentes com uma coloração sutil.
     \vspace{1em}
 
-- Para a página de uma aula:
-  - Unificar os /layouts/ em uma esturutura simplificada,
-  - Apresentar o título, textos e demais recusros, inseridos
-    diretamente no Moodle em um espaço no topo da página,
-  - Abaixo, em um carrossel, os links, arquivos e tarefas
-    disponibilizados para a aula.
-    - Tarefas já concluídas estariam marcadas sutimelmente em verde,
-      atrasadas em vermelho.
-      \vspace{1em}
-
 - Para a área de entrega de tarefa.
   - Simplificação do /layout/ de tabela da página, com melhor uso do
     espaço negativo e coloração.
@@ -291,12 +281,112 @@ critérios para a interface proposta:
 
 ** Wireframes
 Com base nos critérios e objetivos acima expostos, e como guia no
-desenvolvimento do protótipo desta interface, preparamos os seguintes
-/wireframes/ para este projeto.
+desenvolvimento do protótipo desta interface, preparamos um
+/wireframe/ para este projeto, que pode ser visto na figura [[fig:wire]].
+
+Como podemos ver nesta figura, a interface manteria as cores do IFSP,
+verde e branco, em uma paleta cujos tons escuros indicam o grau de
+fixação dos elementos. O verde escuro é usado no cabeçalho e no rodapé
+para mostrar a continuidade destes elementos em todas as páginas do
+projeto.
+
+Os demais elementos são construídos em cores mais sutis, e com
+espaçamento coerente com o agrupamento destes. Desta forma, os /cards/
+com as disciplinas mantém a mesma cor de fundo entre si, assim como os
+/badges/ das tarefas a entregar.
+
+A cor também é usada, nos /badges/ para indicar visualmente outros elementos, como
+prazo, sendo verde para prazos concluídos e vermelho para prazos
+perdidos. No entanto, a cor é o único diferencial escolhido, para
+manter a coerência no espaçamento e tamanhos do texto e ícones.
+
+Um elemento ausente no /wireframe/ apresentado são /pop-ups/ nos
+seguintes botões: notificação, perfil de usuário, filtros de semestre
+e tarefas. Estes /pop-ups/ incluiriam botões para ativar
+funcionalidades na página, como estabelecer outro filtro nas listas,
+modo notuno, ou acessar outras páginas.
+
+Por fim, optamos por usar bordas arredondadas ao início e fim de um
+grupo de elementos, como forma de indicar a constituição de um bloco
+funcional.
+
+
+* Detalhes de implementação
+Após a conclusão do projeto, alguns detalhes merecem ser apontados,
+pois demonstram a qualidade e as limitações de escopo do projeto
+realizado.
+
+** Carregamento dinâmico
+Priorizamos, em páginas que contém elementos semelhantes, como
+cards e badges, uma estruturção dinâmica, em tempo de
+carregamento. Implementamos isto por meio de JavaScrpit, e é
+inspirada por /frameworks/ SPA como React. Para simular este
+comportamento, constuímos um objeto contendo dados demonstrativos, que
+é então mapeado para alguns elementos criados em JavaScript e inserido
+no DOM como um conjunto.
+
+Desta forma, os dados podem ser trabalhados antes da inserção, através
+da manipulação de objetos e vetores. Para além disso, esta abordagem
+permite a seleção, em tempo de carrgamento, de elementos que podem ser
+deduzidos dos dados disponíveis, como ícones para arquivos específicos
+ou datas relativas ao presente.
+
+** Imposibilidade de implementar /downloads/ e /srcooling/
+Seria conveniente, para alguns elementos que produzimos, permitir um
+número potencialmente infinito de elementos filhos, como arquivos
+disponíveis para uma aula e tarefas a serem entregues, assim como o
+/download/ de um arquivo ao se clicar no elemento que o representa.
+Estas funcionalidades exigiriam entretanto, alguns conhecimentos em
+JavaScript e CSS para que possamos implementá-los.
+
+Entretanto, dado o caráter de protótipo deste projeto, consideramos
+que a propsta visual é o foco, razão pela qual optamos por deixar
+estas funcionalidades a parte.
+
+** Página /dummy/
+Como o Moodle é um sistema aberto, potencialmente infinto e repleto de
+subpáginas com conteúdo que se assemelha em estrtura, qualquer
+elemento em tela que não seja um texto pode ser considerado um /link/
+para outra página. Um exemplo disto é, no próprio /wireframe/
+apresentado, que cada /card/ e cada /badge/ levaria a uma página
+diferente.
+
+Desta forma, optamos por contruir uma página /dummy/, cujo conteúdo é
+simplesmente uma mensagem indicando que aquela página está fora do
+escopo do projeto.
+Como o foco do projo é a visualidade da interface, demos atenção
+ao /design/ desta página, apresentando o famoso erro 404 como uma
+/arrow function/, nas cores do tema /Solarized/.
+A esta mensagem divertida, seguem links com informações sobre o IFSP
+São Paulo e o Moodle.
+
+** Modo noturno
+Uma das principais /features/ nos aplicativos modernos é o modo
+noturno. Este é um tema, nas cores da paleta original, mas com tons
+escuros e textos claros.
+Como forma de melhorar a acessibilidade, produzimos um tema assim,
+aplicado ao clique de um botão. Esta funcionalidade inclui a
+referência ao css apropariado. Se ele já estiver presente, remove-o,
+pois enetendemos que o segundo clique indica o desejo de desativar o
+tema.
+
+Um defeito de implementação que não tivemos tempo de corrigir é a
+persistência deste tema. Assumimos que o usuário não deseja aplicar o
+tema apenas a página em que está. Ao contrário, uma vez ativado o modo
+noturno, este deve permancer ativo para o usuário até que ele
+desative, independente de como ele navegar pelas interfaces.
+Entretanto, nos escapa a técnica, em JavaScript para implemetar esta
+funcionalidade ainda, razão pela qual ela foi deixada de lado.
 
 
 
 * Conclusão
+Apesar de este projeto ter apenas caráter educativo, isto é, não
+reflete uma implementação real de uma interface para o Moodle IFSP,
+vemos através dele a complexidade de se desenvolver interfaces de
+usuário modernas e uma possilidade para o Moodle IFSP que, apesar de
+menos flexível, seria coerente quanto ao local onde o usuário está no
+sistema.
 
 
 * Apêndice
@@ -352,6 +442,11 @@ desenvolvimento do protótipo desta interface, preparamos os seguintes
 #+caption: /Layout/ do /pop-up/ de seletor de arquivos.
 #+label: fig:arq-2
 [[./media/arquivos_2.png]]
+:end:
+:img11:
+#+caption: /Wireframe/ esperado para o painel de cursos.
+#+label: fig:wire
+[[./media/wireframe.png]]
 :end:
 
 \setcounter{figure}{0}
