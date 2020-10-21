@@ -55,3 +55,9 @@ footer h2 {
 .dummy {
   background: url("../media/solarized-back-blue.svg") no-repeat;
 }
+
+
+.docs-aula > h5,
+.container-docs > h5 {
+  background-color: var(--medium-green);
+}

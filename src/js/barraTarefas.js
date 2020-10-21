@@ -120,6 +120,10 @@ const displayBadgesTarefas = (t) => {
   badge.appendChild(labels);
 
   sidebarTarefas.appendChild(badge);
+
+  badge.addEventListener("click", (e) => {
+      window.open("entrega.html", "_self");
+  });
 };
 
 /* Limpa a barra lateral e mapeia a função de mostrar os badges sobre
