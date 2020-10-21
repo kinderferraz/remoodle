@@ -48,6 +48,11 @@ h1 {
   margin-right: 10px;
 }
 
+h1 a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .buscar {
   padding: 8px 5px;
   margin: 10px;
