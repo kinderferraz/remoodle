@@ -32,6 +32,11 @@ const togglePopup = (e) => {
   e.preventDefault();
   const popup = e.currentTarget.querySelector(".popuptext");
   popup.classList.toggle("show");
+  setTimeout((el) => {
+    el.classList.contains("show") ?
+      el.classList.toggle("show") : null;
+  }, 60000, popup);
+
 };
 
 popups.forEach((popup) => popup.addEventListener("click", togglePopup, true));
